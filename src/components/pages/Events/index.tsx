@@ -12,7 +12,7 @@ const Events = () => {
 
     const { data, isError, isLoading } = useQuery(['events'], () => api.get('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard'))
     const [currentPage, setCurrentPage] = useState(1)
-    const [eventsPerPage, setEventsPerPage] = useState(6)
+    const [eventsPerPage, setEventsPerPage] = useState(4)
     const lastEventIndex = currentPage * eventsPerPage
     const firstEventIndex = lastEventIndex - eventsPerPage
     const totalPages = Math.floor(data?.data.events.length / eventsPerPage) + 1
