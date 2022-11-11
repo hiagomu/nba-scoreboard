@@ -6,8 +6,6 @@ interface ILinescores {
 
 const Linescores: React.FC<ILinescores> = ({teams}) => {
 
-    console.log(teams[0].score)
-
     return <styles.containerLinescore>
         <styles.containerScore>
             <p>Equipes</p>

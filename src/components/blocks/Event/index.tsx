@@ -9,6 +9,8 @@ const Event: React.FC<IEvent> = ({event}) => {
 
     const teams = event.competitions[0].competitors
 
+    console.log(event)
+
     return <styles.main>
         <styles.containerTeams
             done={event.status.type.completed}
@@ -23,7 +25,10 @@ const Event: React.FC<IEvent> = ({event}) => {
                 </p>
             </div>
             <div className='score'>
-                <span>{event.status.type.name === 'STATUS_IN_PROGRESS' ? 'LIVE' : 'FINAL'}</span>
+                {
+                    event.status.type.name !== 'STATUS_SCHEDULED' &&
+                    <span>{event.status.type.name === 'STATUS_IN_PROGRESS' ? 'LIVE' : 'FINAL'}</span>
+                }
                 <p className='time'>{event.status.type.detail.includes('Final') ? '':  event.status.type.detail}</p>
                 <p className='points'>{teams[0].score}-{teams[1].score}</p>
             </div>
@@ -37,7 +42,9 @@ const Event: React.FC<IEvent> = ({event}) => {
                 </p>
             </div>
         </styles.containerTeams>
-        <Linescores teams={teams}/>
+        {
+            teams[0].linescores && <Linescores teams={teams}/>
+        }
         <styles.detailsButton>MORE</styles.detailsButton>
     </styles.main>
 }
