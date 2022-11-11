@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import background from '../../../assets/background-gradient.png'
+import backgroundMobile from '../../../assets/background-mobile.png'
 
 const main = styled.div`
     height: 100vh;
@@ -8,9 +9,17 @@ const main = styled.div`
     justify-content: center;
     align-items: center;
     background-image: url(${background});
+    background-image: url(${backgroundMobile});
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+
+    @media (max-width: 768px) {
+        height: 80rem;
+        overflow: visible;
+        background-image: none;
+        background-image: url(${backgroundMobile});
+    }
 `
 
 const wrapEvents = styled.div`
@@ -21,6 +30,11 @@ const wrapEvents = styled.div`
     flex-wrap: wrap;
     width: 80vw;
     height: 90vh;
+
+    @media (max-width: 768px) {
+        height: fit-content;
+        gap: 1rem;
+    }
 `
 
 const changePage = styled.div<{active: boolean}>`
@@ -40,6 +54,16 @@ const changePage = styled.div<{active: boolean}>`
     .icon {
         width: 1.25rem;
         height: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        .icon {
+            width: 0.8rem;
+            height: 0.8rem;
+        }
     }
 `
 

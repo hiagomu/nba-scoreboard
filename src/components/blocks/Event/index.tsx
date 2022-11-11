@@ -1,3 +1,4 @@
+import Linescores from '../Linescores'
 import styles from './styles'
 
 interface IEvent {
@@ -7,9 +8,11 @@ interface IEvent {
 const Event: React.FC<IEvent> = ({event}) => {
 
     const teams = event.competitions[0].competitors
-    
+
     return <styles.main>
-        <styles.containerTeams>
+        <styles.containerTeams
+            done={event.status.type.completed}
+        >
             <div className='team'>
                 <img src={teams[0].team.logo} alt="Logo do Dallas Mavericks" />
                 <h2>{teams[0].team.name}</h2>
@@ -20,8 +23,9 @@ const Event: React.FC<IEvent> = ({event}) => {
                 </p>
             </div>
             <div className='score'>
-                <span>{event.status.type.completed ? 'FINAL' : 'LIVE'}</span>
-                <p>{teams[0].score}-{teams[1].score}</p>
+                <span>{event.status.type.name === 'STATUS_IN_PROGRESS' ? 'LIVE' : 'FINAL'}</span>
+                <p className='time'>{event.status.type.detail.includes('Final') ? '':  event.status.type.detail}</p>
+                <p className='points'>{teams[0].score}-{teams[1].score}</p>
             </div>
             <div className='team'>
                 <img src={teams[1].team.logo} alt="Logo do Orlando Magic" />
@@ -33,6 +37,8 @@ const Event: React.FC<IEvent> = ({event}) => {
                 </p>
             </div>
         </styles.containerTeams>
+        <Linescores teams={teams}/>
+        <styles.detailsButton>MORE</styles.detailsButton>
     </styles.main>
 }
 
