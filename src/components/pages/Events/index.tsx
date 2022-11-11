@@ -21,19 +21,6 @@ const Events = () => {
 
     return (
         <styles.main>
-            {
-                currentPage > 1 ?
-                    <styles.changePage
-                        active={true}
-                        onClick={() => setCurrentPage(currentPage - 1)}
-                    >
-                        <Previous className="icon"/>
-                    </styles.changePage>
-                    :
-                    <styles.changePage active={false}>
-                        <Previous className="icon"/>
-                    </styles.changePage>
-            }
             <styles.wrapEvents>
                 {
                     data?.data.events.slice(firstEventIndex, lastEventIndex).map((event: any, key: number) =>
@@ -44,19 +31,35 @@ const Events = () => {
                     )
                 }
             </styles.wrapEvents>
-            {
-                currentPage < totalPages ?
-                    <styles.changePage
-                        active={true}
-                        onClick={() => setCurrentPage(currentPage + 1)}
-                    >
-                        <Next className="icon"/>
-                    </styles.changePage>
-                    :
-                    <styles.changePage active={false}>
-                        <Next className="icon"/>
-                    </styles.changePage>
-            }
+            <styles.changePageWrapper>
+                {
+                    currentPage > 1 ?
+                        <styles.changePage
+                            active={true}
+                            onClick={() => setCurrentPage(currentPage - 1)}
+                        >
+                            <Previous className="icon"/>
+                        </styles.changePage>
+                        :
+                        <styles.changePage active={false}>
+                            <Previous className="icon"/>
+                        </styles.changePage>
+                }
+                {
+                    currentPage < totalPages ?
+                        <styles.changePage
+                            active={true}
+                            onClick={() => setCurrentPage(currentPage + 1)}
+                        >
+                            <Next className="icon"/>
+                        </styles.changePage>
+                        :
+                        <styles.changePage active={false}>
+                            <Next className="icon"/>
+                        </styles.changePage>
+                }
+            </styles.changePageWrapper>
+
         </styles.main>
     ) 
 }

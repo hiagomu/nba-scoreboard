@@ -8,6 +8,7 @@ const main = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-image: url(${background});
     background-image: url(${backgroundMobile});
     background-repeat: no-repeat;
@@ -28,12 +29,22 @@ const wrapEvents = styled.div`
     gap: 0 2rem;
     align-items: center;
     flex-wrap: wrap;
-    width: 80vw;
+    width: 75vw;
     height: 90vh;
 
     @media (max-width: 768px) {
         height: fit-content;
         gap: 1rem;
+    }
+`
+
+const changePageWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+
+    @media (max-width: 768px) {
+        margin-top: 1rem;
     }
 `
 
@@ -70,5 +81,6 @@ const changePage = styled.div<{active: boolean}>`
 export default {
     main,
     wrapEvents,
+    changePageWrapper,
     changePage
 }
