@@ -15,7 +15,9 @@ const Events = () => {
     const [eventsPerPage, setEventsPerPage] = useState(4)
     const lastEventIndex = currentPage * eventsPerPage
     const firstEventIndex = lastEventIndex - eventsPerPage
-    const totalPages = Math.floor(data?.data.events.length / eventsPerPage) + 1
+    const totalPages =
+        Math.floor(data?.data.events.length / eventsPerPage) <= 1 ? 
+            1 : Math.floor(data?.data.events.length / eventsPerPage) + 1
 
     return (
         <styles.main>
