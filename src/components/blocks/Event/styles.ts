@@ -6,13 +6,13 @@ const main = styled.div`
     flex-direction: column;
     background-color: #202024;
     width: 29rem;
-    height: 19.5rem;
+    height: 21rem;
     border-radius: 0.5rem;
     font-family: 'Roboto', sans-serif;
 
     @media (max-width: 768px) {
         width: 19.5rem;
-        height: 17.5rem;
+        height: 19.5rem;
     }
 `
 
@@ -84,6 +84,7 @@ const containerTeams = styled.div<{done: boolean}>`
     @media (max-width: 768px) {
         width: 19rem;
         margin: 1rem 0 0 0;
+        height: 8.5rem;
 
         .team {
             img {

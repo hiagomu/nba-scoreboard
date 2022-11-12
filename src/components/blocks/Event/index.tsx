@@ -1,4 +1,5 @@
 import Linescores from '../Linescores'
+import Situation from '../Situation'
 import styles from './styles'
 
 interface IEvent {
@@ -10,10 +11,11 @@ const Event: React.FC<IEvent> = ({event}) => {
     const teams = event.competitions[0].competitors
 
     console.log(event)
+    //console.log(event.competitions[0].situation ? event.competitions[0].situation.lastPlay.team.id : '')
 
     return <styles.main>
         <styles.containerTeams
-            done={event.status.type.completed}
+            done={event.status.type.name === 'STATUS_IN_PROGRESS' || event.status.type.name === 'STATUS_HALFTIME' ? false : true}
         >
             <div className='team'>
                 <img src={teams[0].team.logo} alt="Logo do Dallas Mavericks" />
@@ -27,7 +29,12 @@ const Event: React.FC<IEvent> = ({event}) => {
             <div className='score'>
                 {
                     event.status.type.name !== 'STATUS_SCHEDULED' &&
-                    <span>{event.status.type.name === 'STATUS_IN_PROGRESS' ? 'LIVE' : 'FINAL'}</span>
+                    <span>
+                        {
+                        event.status.type.name === 'STATUS_IN_PROGRESS' || event.status.type.name === 'STATUS_HALFTIME' ?
+                            'LIVE' : 'FINAL'
+                        }
+                    </span>
                 }
                 <p className='time'>{event.status.type.detail.includes('Final') ? '':  event.status.type.detail}</p>
                 <p className='points'>{teams[0].score}-{teams[1].score}</p>
@@ -43,9 +50,16 @@ const Event: React.FC<IEvent> = ({event}) => {
             </div>
         </styles.containerTeams>
         {
+            event.competitions[0].situation
+            &&
+            <Situation
+                situation={event.competitions[0].situation.lastPlay.text}
+                teamLogo={teams[0].team.logo}
+            />
+        }
+        {
             teams[0].linescores && <Linescores teams={teams}/>
         }
-        <styles.detailsButton>MORE</styles.detailsButton>
     </styles.main>
 }
 

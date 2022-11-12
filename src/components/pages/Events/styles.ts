@@ -16,7 +16,7 @@ const main = styled.div`
     overflow: hidden;
 
     @media (max-width: 768px) {
-        height: 80rem;
+        height: 85rem;
         overflow: visible;
         background-image: none;
         background-image: url(${backgroundMobile});
@@ -52,8 +52,8 @@ const changePage = styled.div<{active: boolean}>`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3rem;
-    height: 3rem;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
     background-color: ${props => props.active ? 'rgba(255, 255, 255, 0.6)': 'rgba(255, 255, 255, 0.3)'};
     cursor: pointer;
@@ -63,8 +63,8 @@ const changePage = styled.div<{active: boolean}>`
     }
 
     .icon {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 1rem;
+        height: 1rem;
     }
 
     @media (max-width: 768px) {
