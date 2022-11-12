@@ -10,7 +10,6 @@ const Event: React.FC<IEvent> = ({event}) => {
 
     const teams = event.competitions[0].competitors
 
-    console.log(event)
     //console.log(event.competitions[0].situation ? event.competitions[0].situation.lastPlay.team.id : '')
 
     return <styles.main>
