@@ -11,6 +11,7 @@ import {
 const Events = () => {
 
     const [data, setData] = useState<any>()
+    const [teams, setTeams] = useState<any>()
     const [currentPage, setCurrentPage] = useState(1)
     const [eventsPerPage, setEventsPerPage] = useState(4)
     const lastEventIndex = currentPage * eventsPerPage
@@ -21,25 +22,26 @@ const Events = () => {
             1 : Math.ceil(data?.data.events.length / eventsPerPage)
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
-          }, 800);
+        // const timer = setInterval(() => {
+        //     setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+        //   }, 800);
       
-          return () => {
-            clearInterval(timer);
-        };
+        //   return () => {
+        //     clearInterval(timer);
+        // };
     }, [])
 
     useEffect(() => {
         const run = async () => {
-            const response = await api.get('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard')
-            setData(response)
+            const scoreboard = await api.get('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard')
+            const _teams = await api.get('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams')
+            setData(scoreboard)
+            setTeams(_teams.data.sports[0].leagues[0].teams)
 
-            setTimeout(run, 10 * 1000)
+            //setTimeout(run, 10 * 1000)
         }
         run()
     }, [])
-
 
     return (
         <styles.main>
@@ -52,6 +54,7 @@ const Events = () => {
                         <Event
                             key={key}
                             event={event}
+                            teams={teams}
                         />
                     )
                 }
