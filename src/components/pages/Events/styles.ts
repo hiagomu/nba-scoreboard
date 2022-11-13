@@ -10,7 +10,6 @@ const main = styled.div`
     align-items: center;
     flex-direction: column;
     background-image: url(${background});
-    background-image: url(${backgroundMobile});
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
