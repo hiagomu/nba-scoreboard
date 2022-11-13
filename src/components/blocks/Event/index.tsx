@@ -52,7 +52,11 @@ const Event: React.FC<IEvent> = ({event, teams}) => {
             &&
             <Situation
                 situation={event.competitions[0].situation.lastPlay.text}
-                teamLogo={teams.find((team: any) => team.team.id === event.competitions[0].situation.lastPlay.team.id).team.logos[0].href}
+                teamLogo={
+                    event.competitions[0].situation.lastPlay.team.id ?
+                        teams.find((team: any) => team.team.id === event.competitions[0].situation.lastPlay.team.id).team.logos[0].href
+                        : null
+                }
             />
         }
         {
