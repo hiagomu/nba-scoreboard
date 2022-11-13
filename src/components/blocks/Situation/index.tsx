@@ -9,7 +9,9 @@ const Situation: React.FC<ISituation> = ({situation, teamLogo}) => {
 
     return <styles.wrapSituation>
         {
-            teamLogo && <img src={teamLogo} alt="Time na situação atual" />
+            teamLogo ?
+                <img src={teamLogo} alt="Time na situação atual" />
+                : null
         }
         <p>{situation}</p>
     </styles.wrapSituation>

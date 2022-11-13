@@ -53,7 +53,7 @@ const Event: React.FC<IEvent> = ({event, teams}) => {
             <Situation
                 situation={event.competitions[0].situation.lastPlay.text}
                 teamLogo={
-                    event.competitions[0].situation.lastPlay.team.id ?
+                    event.competitions[0].situation.lastPlay.team ?
                         teams.find((team: any) => team.team.id === event.competitions[0].situation.lastPlay.team.id).team.logos[0].href
                         : null
                 }
