@@ -21,8 +21,8 @@ const containerScore = styled.div`
 
     ol {
         display: flex;
-        justify-content: space-between;
         width: 10rem;
+        justify-content: right;
     }
 
     li {

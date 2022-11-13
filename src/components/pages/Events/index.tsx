@@ -22,13 +22,13 @@ const Events = () => {
             1 : Math.ceil(data?.data.events.length / eventsPerPage)
 
     useEffect(() => {
-        // const timer = setInterval(() => {
-        //     setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
-        //   }, 800);
+        const timer = setInterval(() => {
+            setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+          }, 800);
       
-        //   return () => {
-        //     clearInterval(timer);
-        // };
+          return () => {
+            clearInterval(timer);
+        };
     }, [])
 
     useEffect(() => {
@@ -38,7 +38,7 @@ const Events = () => {
             setData(scoreboard)
             setTeams(_teams.data.sports[0].leagues[0].teams)
 
-            //setTimeout(run, 10 * 1000)
+            setTimeout(run, 10 * 1000)
         }
         run()
     }, [])
