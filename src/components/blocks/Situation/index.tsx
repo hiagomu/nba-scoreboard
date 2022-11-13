@@ -8,7 +8,9 @@ interface ISituation {
 const Situation: React.FC<ISituation> = ({situation, teamLogo}) => {
 
     return <styles.wrapSituation>
-        <img src={teamLogo} alt="Time na situação atual" />
+        {
+            teamLogo && <img src={teamLogo} alt="Time na situação atual" />
+        }
         <p>{situation}</p>
     </styles.wrapSituation>
 }
