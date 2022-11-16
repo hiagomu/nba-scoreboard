@@ -116,7 +116,7 @@ const containerTeams = styled.div<{done: boolean}>`
 
 const detailsButton = styled.button`
     border: none;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
     font-weight: bold;

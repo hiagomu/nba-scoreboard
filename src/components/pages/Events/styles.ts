@@ -15,10 +15,13 @@ const main = styled.div`
     overflow: hidden;
 
     @media (max-width: 768px) {
-        height: 85rem;
+        justify-content: flex-start;
+        min-height: 100vh;
+        height: fit-content;
         overflow: visible;
         background-image: none;
         background-image: url(${backgroundMobile});
+        position: relative;
     }
 `
 
@@ -32,6 +35,7 @@ const wrapEvents = styled.div`
     height: 90vh;
 
     @media (max-width: 768px) {
+        margin: 1rem 0 4rem 0;
         height: fit-content;
         gap: 1rem;
     }
@@ -43,7 +47,9 @@ const changePageWrapper = styled.div`
     width: 10rem;
 
     @media (max-width: 768px) {
-        margin-top: 1rem;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 1rem;
     }
 `
 

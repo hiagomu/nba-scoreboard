@@ -8,7 +8,7 @@ const Linescores: React.FC<ILinescores> = ({teams}) => {
 
     return <styles.containerLinescore>
         <styles.containerScore>
-            <p>Equipes</p>
+            <p>Team</p>
             <ol>
                 {
                     teams[0].linescores.map((line: any, index: number) => <li>{index + 1}</li>)
