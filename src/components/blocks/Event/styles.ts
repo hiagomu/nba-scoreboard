@@ -134,9 +134,31 @@ const detailsButton = styled.button`
         padding: 0.4rem 0.8rem;
     }
 `
+const linkButton = styled.a`
+    border: none;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    background-color: #503295;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #5B36B2;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.8rem;
+    }
+`
 
 export default {
     main,
     containerTeams,
-    detailsButton
+    detailsButton,
+    linkButton
 }

@@ -62,6 +62,9 @@ const Event: React.FC<IEvent> = ({event, teams}) => {
         {
             teamsAttending[0].linescores && <Linescores teams={teamsAttending}/>
         }
+        {
+            event.status.type.name === 'STATUS_FINAL' && <styles.linkButton href={event.links[2].href} target='_blank'>Highlights at ESPN</styles.linkButton>
+        }
     </styles.main>
 }
 
