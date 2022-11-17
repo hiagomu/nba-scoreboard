@@ -13,7 +13,7 @@ O projeto **NBA Dashboard** foi desenvolvido com intuito de exibir os placares d
 ---
 
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Tecnologias utilizadas
 
 - ReactJS
 - Typescript
@@ -23,9 +23,6 @@ O projeto **NBA Dashboard** foi desenvolvido com intuito de exibir os placares d
 ---
 
 ## ⏱ Iniciar projeto 
-
-### API (Back-end)
-
 
 ```bash
 # Clonar o repositório
@@ -39,4 +36,4 @@ $ npm run dev
 
 ```
 ---
-Desenvolvido com 💜 por Polyane Tuag
+Desenvolvido por Hiago Murilo
