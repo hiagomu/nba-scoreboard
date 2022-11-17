@@ -1,5 +1,5 @@
 <p align="center">
-  <img width= '200' src="./public/logo-basketball.png">
+  <img width= '200' src="./public/logo-readme.png">
 </p>
 
 <h1 align="center">
