@@ -33,8 +33,8 @@ const Events = () => {
 
     useEffect(() => {
         const run = async () => {
-            const scoreboard = await api.get('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard')
-            const _teams = await api.get('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams')
+            const scoreboard = await api.get(import.meta.env.VITE_SCOREBOARD_API_URL)
+            const _teams = await api.get(import.meta.env.VITE_TEAMS_API_URL)
             setData(scoreboard)
             setTeams(_teams.data.sports[0].leagues[0].teams)
 

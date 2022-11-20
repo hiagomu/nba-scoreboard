@@ -1,9 +1,7 @@
-import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Events from './components/pages/Events'
+import Events from './Events'
 
 function App() {
-
   return (
     <Router>
       <Routes> 
