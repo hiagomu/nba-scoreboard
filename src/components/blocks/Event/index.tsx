@@ -1,17 +1,25 @@
 import Linescores from '../Linescores'
 import Situation from '../Situation'
 import styles from './styles'
-
+import { useNavigate } from 'react-router-dom'
 interface IEvent {
     event: any
     teams: any
+    goToMatch: () => void
 }
 
-const Event: React.FC<IEvent> = ({event, teams}) => {
+const Event: React.FC<IEvent> = ({
+    event,
+    teams,
+    goToMatch
+}) => {
 
     const teamsAttending = event.competitions[0].competitors
+    const navigate = useNavigate()
 
-    return <styles.main>
+    return <styles.main
+        onClick={() => goToMatch()}
+    >
         <styles.containerTeams
             done={event.status.type.name === 'STATUS_IN_PROGRESS' || event.status.type.name === 'STATUS_HALFTIME' ? false : true}
         >

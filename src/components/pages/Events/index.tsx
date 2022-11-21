@@ -7,11 +7,13 @@ import {
     GrPrevious as Previous,
     GrNext as Next
 } from 'react-icons/gr'
+import { useNavigate } from "react-router-dom"
 
 const Events = () => {
 
     const [data, setData] = useState<any>()
     const [teams, setTeams] = useState<any>()
+    const navigate = useNavigate()
     const [currentPage, setCurrentPage] = useState(1)
     const [eventsPerPage, setEventsPerPage] = useState(4)
     const lastEventIndex = currentPage * eventsPerPage
@@ -55,6 +57,7 @@ const Events = () => {
                             key={key}
                             event={event}
                             teams={teams}
+                            goToMatch={() => navigate(`/match/${event.competitions[0].competitors[0].team.displayName.toLowerCase().replace(" ", "-")}+${event.competitions[0].competitors[1].team.displayName.toLowerCase().replace(" ", "-")}`)}
                         />
                     )
                 }
