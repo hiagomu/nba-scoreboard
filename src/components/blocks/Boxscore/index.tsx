@@ -6,7 +6,7 @@ interface IBoxscore {
 
 const Boxscore: React.FC<IBoxscore> = ({ boxscore }) => {
 
-    console.log(boxscore.away)
+    // console.log(boxscore?.away)
 
     return <styles.main></styles.main>
 }

@@ -57,7 +57,7 @@ const Events = () => {
                             key={key}
                             event={event}
                             teams={teams}
-                            goToMatch={() => navigate(`/match/${event.competitions[0].competitors[0].team.displayName.toLowerCase().replace(" ", "-")}+${event.competitions[0].competitors[1].team.displayName.toLowerCase().replace(" ", "-")}`)}
+                            goToMatch={() => navigate(`/match/${event.competitions[0].competitors[0].team.displayName.toLowerCase().replaceAll(" ", "-")}+${event.competitions[0].competitors[1].team.displayName.toLowerCase().replaceAll(" ", "-")}`)}
                         />
                     )
                 }
