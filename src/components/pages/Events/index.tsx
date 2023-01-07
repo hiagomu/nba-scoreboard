@@ -7,6 +7,7 @@ import {
     GrPrevious as Previous,
     GrNext as Next
 } from 'react-icons/gr'
+import Dropdown from "../../blocks/Dropdown"
 
 const Events = () => {
 
@@ -45,6 +46,7 @@ const Events = () => {
 
     return (
         <styles.main>
+            <Dropdown />
             <styles.wrapProgress>
                 <CircularProgress variant="determinate" value={progress} />
             </styles.wrapProgress>
