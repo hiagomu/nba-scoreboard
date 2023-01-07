@@ -1,17 +1,15 @@
 import styles from './styles'
 
 interface ISituation {
-    situation: any
-    teamLogo: any
+    situation: string
+    teamLogo: string
 }
 
 const Situation: React.FC<ISituation> = ({situation, teamLogo}) => {
 
     return <styles.wrapSituation>
         {
-            teamLogo ?
-                <img src={teamLogo} alt="Time na situação atual" />
-                : null
+            teamLogo && <img src={teamLogo} alt="Time na situação atual" />
         }
         <p>{situation}</p>
     </styles.wrapSituation>
