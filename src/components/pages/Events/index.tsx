@@ -8,19 +8,24 @@ import {
     GrNext as Next
 } from 'react-icons/gr'
 import Dropdown from "../../blocks/Dropdown"
+import { Models } from "../../../@types"
 
 const Events = () => {
 
-    const [data, setData] = useState<any>()
-    const [teams, setTeams] = useState<any>()
+    const [data, setData] = useState<Models.Events>()
+    const [teams, setTeams] = useState<Models.Competitors>()
     const [currentPage, setCurrentPage] = useState(1)
     const [eventsPerPage, setEventsPerPage] = useState(4)
     const lastEventIndex = currentPage * eventsPerPage
     const firstEventIndex = lastEventIndex - eventsPerPage
     const [progress, setProgress] = useState(0)
-    const totalPages =
-        Math.ceil(data?.data.events.length / eventsPerPage) === 0 ? 
-            1 : Math.ceil(data?.data.events.length / eventsPerPage)
+    let totalPages = 0
+
+    if(data) {
+        totalPages =
+            Math.ceil(data.data.events.length / eventsPerPage) === 0 ? 
+                1 : Math.ceil(data.data.events.length / eventsPerPage)
+    }
 
     useEffect(() => {
         const timer = setInterval(() => {

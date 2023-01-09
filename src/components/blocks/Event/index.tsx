@@ -1,13 +1,9 @@
 import Linescores from '../Linescores'
 import Situation from '../Situation'
 import styles from './styles'
+import { Models } from '../../../@types'
 
-interface IEvent {
-    event: any
-    teams: any
-}
-
-const Event: React.FC<IEvent> = ({event, teams}) => {
+const Event: React.FC<Models.Event> = ({event, teams}) => {
 
     const teamsAttending = event.competitions[0].competitors
 
@@ -54,7 +50,7 @@ const Event: React.FC<IEvent> = ({event, teams}) => {
                 situation={event.competitions[0].situation.lastPlay?.text ?? 'Waiting info...'}
                 teamLogo={
                     event.competitions[0].situation.lastPlay?.team ?
-                        teams.find((team: any) => team.team.id === event.competitions[0].situation.lastPlay.team.id).team.logos[0].href
+                        teams.find(team => team.team.id === event.competitions[0].situation.lastPlay.team.id)?.team.logo[0]
                         : null
                 }
             />
@@ -63,7 +59,10 @@ const Event: React.FC<IEvent> = ({event, teams}) => {
             teamsAttending[0].linescores && <Linescores teams={teamsAttending}/>
         }
         {
-            event.status.type.name === 'STATUS_FINAL' && <styles.linkButton href={event.links[2].href} target='_blank'>Highlights at ESPN</styles.linkButton>
+            event.status.type.name === 'STATUS_FINAL' &&
+                <styles.linkButton href={event.links[2].href} target='_blank'>
+                    Highlights at ESPN
+                </styles.linkButton>
         }
     </styles.main>
 }

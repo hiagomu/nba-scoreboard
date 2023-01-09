@@ -1,17 +1,16 @@
 import styles from './styles'
+import { Models } from '../../../@types'
 
-interface ILinescores {
-    teams: any
-}
+const Linescores: React.FC<Models.Linescores> = ({teams}) => {
 
-const Linescores: React.FC<ILinescores> = ({teams}) => {
+    console.log(teams[0].linescores[0].value)
 
     return <styles.containerLinescore>
         <styles.containerScore>
             <p>Team</p>
             <ol>
                 {
-                    teams[0].linescores.map((line: any, index: number) => <li>{index + 1}</li>)
+                    teams[0].linescores.map((line, index: number) => <li>{index + 1}</li>)
                 }
                 <li>T</li>
             </ol>
@@ -20,7 +19,7 @@ const Linescores: React.FC<ILinescores> = ({teams}) => {
             <p className='team'>{teams[0].team.displayName}</p>
             <ol>
                 {
-                    teams[0].linescores.map((line: any) => <li>{line.value}</li>)
+                    teams[0].linescores.map(line => <li>{line.value}</li>)
                 }
                 <li>{teams[0].score}</li>
             </ol>
@@ -29,7 +28,7 @@ const Linescores: React.FC<ILinescores> = ({teams}) => {
             <p className='team'>{teams[1].team.displayName}</p>
             <ol>
                 {
-                    teams[1].linescores.map((line: any) => <li>{line.value}</li>)
+                    teams[1].linescores.map(line => <li>{line.value}</li>)
                 }
                 <li>{teams[1].score}</li>
             </ol>

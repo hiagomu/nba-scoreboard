@@ -1,11 +1,7 @@
 import styles from './styles'
+import { Models } from '../../../@types'
 
-interface ISituation {
-    situation: string
-    teamLogo: string
-}
-
-const Situation: React.FC<ISituation> = ({situation, teamLogo}) => {
+const Situation: React.FC<Models.Situation> = ({situation, teamLogo}) => {
 
     return <styles.wrapSituation>
         {
