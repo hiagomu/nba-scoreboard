@@ -13,7 +13,7 @@ import { Models } from "../../../@types"
 const Events = () => {
 
     const [data, setData] = useState<Models.Events>()
-    const [teams, setTeams] = useState<Models.Competitors>()
+    const [teams, setTeams] = useState<Models.Competitors[]>()
     const [currentPage, setCurrentPage] = useState(1)
     const [eventsPerPage, setEventsPerPage] = useState(4)
     const lastEventIndex = currentPage * eventsPerPage
@@ -57,7 +57,7 @@ const Events = () => {
             </styles.wrapProgress>
             <styles.wrapEvents>
                 {
-                    data?.data.events.slice(firstEventIndex, lastEventIndex).map((event: any, key: number) =>
+                    data?.data.events.slice(firstEventIndex, lastEventIndex).map((event, key: number) =>
                         <Event
                             key={key}
                             event={event}

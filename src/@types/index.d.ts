@@ -2,7 +2,7 @@ export namespace Models {
 
     export interface Events {
         data: {
-            events: Event[]
+            events: Game[]
         }
     }
 
@@ -126,9 +126,10 @@ export namespace Models {
         }
     }
 
+    //Components
     export interface Event {
         event: Game
-        teams: Competitors[]
+        teams?: Competitors[]
     }
     
     export interface Linescores {
