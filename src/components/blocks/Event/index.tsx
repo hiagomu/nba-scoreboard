@@ -50,7 +50,7 @@ const Event: React.FC<Models.Event> = ({event, teams}) => {
                 situation={event.competitions[0].situation.lastPlay?.text ?? 'Waiting info...'}
                 teamLogo={
                     event.competitions[0].situation.lastPlay?.team ?
-                        teams.find(team => team.team.id === event.competitions[0].situation.lastPlay.team.id)?.team.logo[0]
+                        teams?.find(team => team.team.id === event.competitions[0].situation.lastPlay.team.id)?.team.logo[0]
                         : null
                 }
             />
