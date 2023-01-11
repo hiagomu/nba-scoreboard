@@ -14,6 +14,11 @@ const main = styled.div<{isActive: boolean}>`
         display: flex;
         flex-direction: column;
         height: fit-content;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+        background: #202024;
+        width: 8rem;
+        margin-top: 0.25rem;
+        border-radius: 0.5rem;
     }
 
     a {
@@ -21,7 +26,7 @@ const main = styled.div<{isActive: boolean}>`
         color: #fff;
         text-align: center;
         font-size: 1.1rem;
-        margin-top: 1rem;
+        margin-bottom: 1rem;
         text-decoration: none;
         cursor: pointer;
 
@@ -50,6 +55,31 @@ const main = styled.div<{isActive: boolean}>`
     }
 `
 
+const socialLinks = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    width: 5rem;
+    border-top: 2px solid #fff;
+    padding-top: 1rem;
+    width: 8rem;
+
+    a {
+        margin: 0;
+    }
+
+    .social-icon {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
+    .twitter-icon {
+        &:hover {
+            color: #50a5e6;
+        }
+    }
+`
+
 export default {
-    main
+    main,
+    socialLinks
 }
