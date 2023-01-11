@@ -3,8 +3,6 @@ import { Models } from '../../../@types'
 
 const Linescores: React.FC<Models.Linescores> = ({teams}) => {
 
-    console.log(teams[0].linescores[0].value)
-
     return <styles.containerLinescore>
         <styles.containerScore>
             <p>Team</p>

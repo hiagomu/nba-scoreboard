@@ -13,7 +13,7 @@ import { Models } from "../../../@types"
 const Events = () => {
 
     const [data, setData] = useState<Models.Events>()
-    const [teams, setTeams] = useState<Models.Competitors[]>()
+    const [teams, setTeams] = useState<Models.Team[]>()
     const [currentPage, setCurrentPage] = useState(1)
     const [eventsPerPage, setEventsPerPage] = useState(4)
     const lastEventIndex = currentPage * eventsPerPage

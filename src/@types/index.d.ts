@@ -1,5 +1,18 @@
 export namespace Models {
 
+    export interface Team {
+        team: {
+            id: number
+            displayName: string
+            shortDisplayName: string
+            name: string
+            nickname: string
+            location: string
+            color: string
+            alternateColor: string
+            logos: Logos[]
+        }
+    }
     export interface Events {
         data: {
             events: Game[]
@@ -65,7 +78,7 @@ export namespace Models {
         id: number
         homeAway: string
         team: {
-            id: number
+            id: string
             location: string
             name: string
             abbreviation: string
@@ -129,7 +142,7 @@ export namespace Models {
     //Components
     export interface Event {
         event: Game
-        teams?: Competitors[]
+        teams?: Teams[]
     }
     
     export interface Linescores {
