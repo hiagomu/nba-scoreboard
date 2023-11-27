@@ -1,15 +1,9 @@
 import Linescores from '../Linescores'
 import Situation from '../Situation'
 import styles from './styles'
-import { useNavigate } from 'react-router-dom'
-import { FaAngleRight as Details } from "react-icons/fa"
-interface IEvent {
-    event: any
-    teams: any
-    goToMatch: () => void
-}
+import { EventComponent } from '../../../@types'
 
-const Event: React.FC<IEvent> = ({
+const Event: React.FC<EventComponent> = ({
     event,
     teams,
     goToMatch
@@ -91,7 +85,7 @@ const Event: React.FC<IEvent> = ({
                     situation={event.competitions[0].situation.lastPlay?.text ?? 'Waiting info...'}
                     teamLogo={
                         event.competitions[0].situation.lastPlay?.team ?
-                            teams.find((team: any) => team.team.id === event.competitions[0].situation.lastPlay.team.id).team.logos[0].href
+                            teams.find(team => team.team.id === event.competitions[0].situation.lastPlay.team.id)?.team.logos[0].href
                             : null
                     }
                 />

@@ -5,8 +5,6 @@ const main = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 30px;
-
-    
 `
 
 const boxscoreContainer = styled.div`

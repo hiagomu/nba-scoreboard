@@ -9,7 +9,6 @@ import {
 } from 'react-icons/fa'
 
 const Dropdown: React.FC = () => {
-
     const [isActive, setIsActive] = useState(false)
 
     return (
@@ -22,9 +21,9 @@ const Dropdown: React.FC = () => {
             {
                 isActive &&
                 <nav>
-                    <a href="" target="_blank">Home</a>
-                    <a href="" target="_blank">Calendar</a>
-                    <a href="" target="_blank">Gallery</a>
+                    <a href="/">Home</a>
+                    <a href="/">Calendar</a>
+                    <a href="/">Gallery</a>
                     <styles.socialLinks>
                         <a href="https://github.com/hiagomu/nba-scoreboard" target="_blank">
                             <GithubIcon className='social-icon'/>

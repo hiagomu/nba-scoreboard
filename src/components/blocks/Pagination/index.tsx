@@ -1,13 +1,8 @@
+import { Models, PaginationComponent } from "../../../@types"
 import styles from "./styles"
 import { GrPrevious as Previous, GrNext as Next } from 'react-icons/gr'
 
-interface PaginationProps {
-    currentPage: number
-    totalPages: number
-    setCurrentPage: React.Dispatch<React.SetStateAction<number>>
-}
-
-export const Pagination = ({ currentPage, totalPages, setCurrentPage }: PaginationProps) => {
+export const Pagination = ({ currentPage, totalPages, setCurrentPage }: PaginationComponent) => {
     return (
         <styles.changePageWrapper>
             {

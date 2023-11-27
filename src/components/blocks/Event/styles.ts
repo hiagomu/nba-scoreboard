@@ -136,6 +136,7 @@ const detailsButton = styled.button`
         padding: 0.4rem 0.8rem;
     }
 `
+
 const linkButton = styled.a`
     border: none;
     margin-top: 2rem;
@@ -163,24 +164,24 @@ const container = styled.div`
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 5px 20px;
     width: 75%;
 
     h3 {
         font-weight: bold;
         color: #FFF;
-        margin-bottom: 5px;
+        margin: 5px 0 5px 0;
     }
 `
 
 const playerContainer = styled.div`
     display: flex;
     padding: 5px;
-    gap: 10px;
+    gap: 5px;
 
     img {
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
         border-radius: 50%;
         border: 1px solid #DDD;
         object-fit: cover;

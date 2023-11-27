@@ -1,11 +1,7 @@
-import { PlayerStats } from '../../pages/Match'
+import { Models, ScoreboardComponent } from '../../../@types'
 import styles from './styles'
 
-interface Scoreboard {
-    team: PlayerStats[]
-}
-
-const Scoreboard = (team: Scoreboard) => {
+const Scoreboard = (team: ScoreboardComponent) => {
     return (
         <div>
             <styles.table>

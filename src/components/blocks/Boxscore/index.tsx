@@ -1,15 +1,9 @@
-import { PlayerStats } from '../../pages/Match'
 import Points from '../Points'
 import Scoreboard from '../Scoreboard'
 import styles from './styles'
+import { BoxscoreComponent, PlayerStats } from '../../../@types'
 
-interface IBoxscore {
-    boxscore: PlayerStats[]
-    away: string
-    home: string
-}
-
-const Boxscore: React.FC<IBoxscore> = ({ boxscore, away, home }) => {
+const Boxscore: React.FC<BoxscoreComponent> = ({ boxscore, away, home }) => {
     const homeTeam: PlayerStats[] = boxscore.filter(player => player.team.full_name === home)
     const awayTeam: PlayerStats[] = boxscore.filter(player => player.team.full_name === away)
 

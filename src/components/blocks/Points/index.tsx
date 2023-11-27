@@ -3,9 +3,10 @@ import styles from './styles'
 import { useParams } from 'react-router-dom';
 import api from 'axios'
 import { getTimeLeft } from '../../../utils/getTimeLeft';
+import { Event } from '../../../@types';
 
 const Points = () => {
-    const [event, setEvent] = useState<any>()
+    const [event, setEvent] = useState<Event>()
     const { id } = useParams();
     const teamsAttending = event?.competitions[0].competitors
 
@@ -22,7 +23,7 @@ const Points = () => {
     return (
         <styles.main>
             {
-                event &&
+                teamsAttending &&
                 <styles.containerTeams
                     done={event.status.type.name === 'STATUS_IN_PROGRESS' || event.status.type.name === 'STATUS_HALFTIME' ? false : true}
                 >
