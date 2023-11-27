@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FaAngleRight } from "react-icons/fa"
 
 const main = styled.div`
     display: flex;
@@ -9,6 +10,7 @@ const main = styled.div`
     height: 21rem;
     border-radius: 0.5rem;
     font-family: 'Roboto', sans-serif;
+    position: relative;
 
     @media (max-width: 768px) {
         width: 19.5rem;
@@ -156,9 +158,81 @@ const linkButton = styled.a`
     }
 `
 
+const container = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 75%;
+
+    h3 {
+        font-weight: bold;
+        color: #FFF;
+        margin-bottom: 5px;
+    }
+`
+
+const playerContainer = styled.div`
+    display: flex;
+    padding: 5px;
+    gap: 10px;
+
+    img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 1px solid #DDD;
+        object-fit: cover;
+    }
+`
+
+const playerInfos = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px 0;
+    
+    span, p {
+        color: #FFF;
+    }
+
+    p {
+        font-size: 0.75rem;
+    }
+
+`
+
+const containerDetails = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+`
+
+const iconDetails = styled(FaAngleRight)`
+    color: #FFF;
+`
+
 export default {
     main,
     containerTeams,
     detailsButton,
-    linkButton
+    linkButton,
+    container,
+    playerContainer,
+    playerInfos,
+    containerDetails,
+    iconDetails
 }
