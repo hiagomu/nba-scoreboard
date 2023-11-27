@@ -1,4 +1,4 @@
-import { Models, ScoreboardComponent } from '../../../@types'
+import { ScoreboardComponent } from '../../../@types'
 import styles from './styles'
 
 const Scoreboard = (team: ScoreboardComponent) => {

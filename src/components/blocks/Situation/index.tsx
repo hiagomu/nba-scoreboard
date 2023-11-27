@@ -1,5 +1,5 @@
 import styles from './styles'
-import { Models, SituationComponent } from '../../../@types'
+import { SituationComponent } from '../../../@types'
 
 const Situation: React.FC<SituationComponent> = ({situation, teamLogo}) => {
 

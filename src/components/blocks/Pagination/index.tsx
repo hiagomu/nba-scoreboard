@@ -1,4 +1,4 @@
-import { Models, PaginationComponent } from "../../../@types"
+import { PaginationComponent } from "../../../@types"
 import styles from "./styles"
 import { GrPrevious as Previous, GrNext as Next } from 'react-icons/gr'
 
