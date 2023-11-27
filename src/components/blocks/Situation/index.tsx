@@ -1,17 +1,11 @@
 import styles from './styles'
+import { Models } from '../../../@types'
 
-interface ISituation {
-    situation: any
-    teamLogo: any
-}
-
-const Situation: React.FC<ISituation> = ({situation, teamLogo}) => {
+const Situation: React.FC<Models.Situation> = ({situation, teamLogo}) => {
 
     return <styles.wrapSituation>
         {
-            teamLogo ?
-                <img src={teamLogo} alt="Time na situação atual" />
-                : null
+            teamLogo && <img src={teamLogo} alt="Time na situação atual" />
         }
         <p>{situation}</p>
     </styles.wrapSituation>

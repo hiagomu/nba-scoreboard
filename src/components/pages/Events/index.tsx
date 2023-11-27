@@ -7,6 +7,7 @@ import useGetTeams from "../../../services/queries/useGetTeams"
 import { Pagination } from "../../blocks/Pagination"
 import { RefetchProgrss } from "../../blocks/RefetchProgress"
 import { getMatchIndex } from "../../../utils/getMatchIndex"
+import Dropdown from "../../blocks/Dropdown"
 
 export const Events = () => {
     const navigate = useNavigate()
@@ -22,6 +23,7 @@ export const Events = () => {
 
     return (
         <styles.main>
+            <Dropdown />
             <RefetchProgrss />
             <styles.wrapEvents>
                 {
