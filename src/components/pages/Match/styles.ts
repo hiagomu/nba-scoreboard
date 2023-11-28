@@ -14,6 +14,12 @@ const main = styled.div`
     background-size: cover;
     overflow: hidden;
 
+    @media (max-width: 1024px) {
+        height: fit-content;
+        flex-direction: column;
+        padding: 3rem 0;
+    }
+
     @media (max-width: 768px) {
         justify-content: flex-start;
         min-height: 100vh;

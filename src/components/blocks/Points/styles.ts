@@ -4,10 +4,20 @@ const main = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1200px;
+    width: 100%;
     height: 237px;
     border-radius: 10px;
     background: #202024;
+    
+    @media (max-width: 1024px) {
+        height: 160px;
+        padding: 0 10px;
+    }
+
+    @media (max-width: 768px) {
+        height: 120px;
+    }
+    
 `
 
 const containerTeams = styled.div<{done: boolean}>`
@@ -73,6 +83,40 @@ const containerTeams = styled.div<{done: boolean}>`
             font-family: 'Righteous', cursive;
             font-size: 3rem;
             color: #FFFFFF;
+        }
+
+    }
+
+    @media (max-width: 1024px) {
+        width: fit-content;
+        margin: 1rem 0 0 0;
+        height: 8.5rem;
+
+        .team {
+            img {
+                height: 6.5rem;
+                width: 6.5rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+            }
+        }
+
+        .score {
+            margin: 0 30px;
+
+            .time {
+                font-size: 1.2rem;
+            }
+
+            .points {
+                font-size: 1.8rem;
+            }
         }
     }
 
