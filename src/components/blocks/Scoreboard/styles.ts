@@ -6,7 +6,16 @@ const main = styled.div`
 `
 
 const table = styled.table`
+    display: flex;
+    flex-direction: column;
     color: white;
+
+    tbody {
+        display: block;
+        max-height: 50vh;
+        overflow: auto;
+        padding-right: 0.5rem;
+    }
 
     th {
         font-family: Roboto;
@@ -15,6 +24,7 @@ const table = styled.table`
         color: #FFF;
 
         &:first-child {
+            width: 20.5rem;
             font-size: 24px;
             font-weight: 700;
             text-align: start;
