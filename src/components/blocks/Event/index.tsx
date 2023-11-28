@@ -12,11 +12,14 @@ const Event: React.FC<EventComponent> = ({
 
     return (
         <styles.main>
-            <styles.containerDetails
-                onClick={() => goToMatch()}
-            >
-                <styles.iconDetails />
-            </styles.containerDetails>
+            {
+                event.status.type.name !== "STATUS_SCHEDULED" &&
+                <styles.containerDetails
+                    onClick={() => goToMatch()}
+                >
+                    <styles.iconDetails />
+                </styles.containerDetails>
+            }
             <styles.containerTeams
                 done={event.status.type.name === 'STATUS_IN_PROGRESS' || event.status.type.name === 'STATUS_HALFTIME' ? false : true}
             >
@@ -85,7 +88,7 @@ const Event: React.FC<EventComponent> = ({
                     situation={event.competitions[0].situation.lastPlay?.text ?? 'Waiting info...'}
                     teamLogo={
                         event.competitions[0].situation.lastPlay?.team ?
-                            teams.find(team => team.team.id === event.competitions[0].situation.lastPlay.team.id)?.team.logos[0].href
+                            teams?.find(team => team.team.id === event.competitions[0].situation.lastPlay.team.id)?.team.logos[0].href
                             : null
                     }
                 />

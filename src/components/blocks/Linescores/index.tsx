@@ -7,7 +7,7 @@ const Linescores: React.FC<LinescoresComponent> = ({teams}) => {
             <p>Team</p>
             <ol>
                 {
-                    teams[0].linescores?.map((line, index: number) => <li>{index + 1}</li>)
+                    teams[0].linescores?.map((line, index: number) => <li key={index}>{index + 1}</li>)
                 }
                 <li>T</li>
             </ol>
@@ -16,7 +16,7 @@ const Linescores: React.FC<LinescoresComponent> = ({teams}) => {
             <p className='team'>{teams[0].team.displayName}</p>
             <ol>
                 {
-                    teams[0].linescores?.map(line => <li>{line.value}</li>)
+                    teams[0].linescores?.map((line, index) => <li key={index}>{line.value}</li>)
                 }
                 <li>{teams[0].score}</li>
             </ol>
@@ -25,7 +25,7 @@ const Linescores: React.FC<LinescoresComponent> = ({teams}) => {
             <p className='team'>{teams[1].team.displayName}</p>
             <ol>
                 {
-                    teams[1].linescores?.map(line => <li>{line.value}</li>)
+                    teams[1].linescores?.map((line, index) => <li key={index}>{line.value}</li>)
                 }
                 <li>{teams[1].score}</li>
             </ol>

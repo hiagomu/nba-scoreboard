@@ -22,8 +22,6 @@ const Dropdown: React.FC = () => {
                 isActive &&
                 <nav>
                     <a href="/">Home</a>
-                    <a href="/">Calendar</a>
-                    <a href="/">Gallery</a>
                     <styles.socialLinks>
                         <a href="https://github.com/hiagomu/nba-scoreboard" target="_blank">
                             <GithubIcon className='social-icon'/>
